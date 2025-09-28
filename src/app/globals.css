@@ -12,15 +12,182 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.6;
+}
+
+/* Basic typography for Markdown content */
+main h1 { font-size: 2rem; font-weight: 700; margin: 1.5rem 0 1rem; }
+main h2 { font-size: 1.5rem; font-weight: 700; margin: 1.25rem 0 0.75rem; }
+main h3 { font-size: 1.25rem; font-weight: 600; margin: 1rem 0 0.5rem; }
+main h4 { font-size: 1.1rem; font-weight: 600; margin: 0.75rem 0 0.5rem; }
+main p { margin: 0.75rem 0; }
+main ul, main ol { margin: 0.75rem 0 0.75rem 1.25rem; padding-left: 1rem; }
+main li { margin: 0.25rem 0; }
+main a { color: #2563eb; text-decoration: underline; text-underline-offset: 2px; }
+/* Make media centered; images respect intrinsic/explicit size */
+main img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0;
+}
+/* Videos and iframes should fill the container width */
+main video,
+main iframe {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0;
+}
+/* Provide a reasonable default aspect ratio for iframes (Scratch, maps, etc.) */
+main iframe { aspect-ratio: 4 / 3; }
+main figure { margin: 1rem 0; }
+main table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+main th, main td { border: none; padding: 0; text-align: left; }
+main code { background: #f4f4f5; padding: 0.1rem 0.3rem; border-radius: 0.25rem; font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+main pre { background: #0b1020; color: #e5e7eb; padding: 0.75rem; overflow: auto; border-radius: 0.5rem; }
+
+/* Copied from jekyll/assets/main.scss to align styles across sites */
+.site-header {
+	padding-top:5px;
+	border: none;
+}
+
+footer p.logo {
+  text-align:right;
+}
+
+a.site-logo img {
+    float:left;
+    height:50px;
+}
+
+nav.site-nav a.page-link {
+  display: inline-block;
+  padding: .4rem .8rem;
+  margin-right: .2rem!important;
+}
+
+nav.site-nav a.page-link:hover {
+  text-decoration:none;
+}
+
+nav.site-nav a.page-link:hover {
+  box-shadow: -6px -5px 10px hsla(0,0%,0%,.15);
+}
+
+nav.site-nav a.page-link.index {
+  color: white;
+  background-color: hsl(37,80%,54%); 
+}
+
+nav.site-nav a.page-link.index:hover {
+  transform: scale(1.2) rotate(-11deg);
+}
+
+nav.site-nav a.page-link.join-us {
+  color: white;
+  background-color: hsl(272,42%,48%);
+}
+
+nav.site-nav a.page-link.join-us:hover {
+  transform: scale(1.2) rotate(-4deg);
+}
+
+nav.site-nav a.page-link.material {
+  color: white;
+  background-color: hsl(120,38%,50%);
+}
+
+nav.site-nav a.page-link.material:hover {
+  transform: scale(1.2) rotate(3deg);
+}
+
+nav.site-nav a.page-link.about {
+  color: white;
+  background-color: hsl(358,49%,56%);
+}
+
+nav.site-nav a.page-link.about:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+
+nav.site-nav a.page-link.contact {
+  color: white;
+  background-color: hsl(199,100%,47%);
+}
+
+nav.site-nav a.page-link.contact:hover {
+  transform: scale(1.2) rotate(17deg);
+}
+
+p.button {
+  margin-bottom:2em;
+  font-size: 1.6em;
+}
+p.button.participant {
+  color: hsl(37,96%,54%);
+}
+
+p.button a {
+  padding: .3em .6em;
+  border-radius: .3em;
+  text-decoration: none;
+  border: 1px solid black;
+  color: black;
+}
+
+p.button.participant a {
+  color: hsl(37,96%,54%);
+  background-color: hsl(37,96%,90%);
+  border: 1px solid hsl(37,96%,54%);
+}
+
+p.button.mentor a {
+  color: hsl(272,39%,44%);
+  background-color: hsl(272,39%,90%);
+  border: 1px solid hsl(272,39%,44%);
+}
+
+p.button.parent a {
+  color: hsl(120,43%,50%);
+  background-color: hsl(120,43%,90%);
+  border: 1px solid hsl(120,43%,50%);
+}
+
+.post-content h1 {
+  font-size: 36px;
+}
+
+figure.video {
+  position: relative;
+}
+
+figure.video p {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 6px;
+  background-color: #dddddd;
+}
+
+video.fill {
+  width:100% !important;
+  height: auto !important
+}
+
+div.challenge {
+  border:1px solid black;
+  padding:1em;
+  margin-bottom:2em;
 }

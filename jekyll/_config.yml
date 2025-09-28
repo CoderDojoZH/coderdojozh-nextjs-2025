@@ -1,0 +1,75 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: CoderDojo Zürich
+email: 
+description: >- # this means to ignore newlines until "baseurl:"
+# baseurl: "/test-jekyll" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: CoderDojoZh
+github_username:  CoderDojoZh
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+
+collections:
+  pages:
+    output: true
+    permalink: /:_pages/
+
+logo: coderdojo-zh-small.png
+
+coderdojo:
+  footer_logo: coderdojo-zh-bended-02.svg
+  place_and_time:
+    en: Sunday, 15:00 – 17:00<br>
+      Limmatplatz 183<br>
+      Zurich
+    de: Sonntag, 15:00 – 17:00<br>
+      Limmatplatz 183<br>
+      Zürich
+  videos:
+    - en: Coderdojo 2017 – Environment Protection Challenge
+      de: Coderdojo 2017 – Umweltschutz Challenge
+      file: coderdojo-2017-environment-protection-challenge.mp4
+    - en: Coderdojo 2018 – Safety in the move Challenge
+      de: Coderdojo 2018 – Sicher unterwegs Challenge
+      file: coderdojo-2018-safety-in-the-move-challenge.mp4
+    - en: Coderdojo 2019 Cyberprotection Challenge
+      de: Coderdojo 2019 Cyberprotection Challenge
+      file: coderdojo-2019-cyberprotection-challenge.mp4
+  scratch-of-the-week: 282753934
+  # put two challenge description in _pages/partials/
+  # challenge-2019-12.md and challenge-2018-12-de.md
+  # and set challenge to challenge-2018-12
+  # challenge: challenge-2019-06
+
+# exclude:
+#   - README.md
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
