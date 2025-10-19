@@ -20,7 +20,7 @@ const nextConfig: NextConfig = {
     },
     pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
     basePath: process.env.NODE_ENV === 'production' ? '' : '',
-    compress: process.env.NODE_ENV === 'production' ? true : false,
+    compress: process.env.NODE_ENV === 'production',
     devIndicators: {
         position: 'bottom-right',
     },
