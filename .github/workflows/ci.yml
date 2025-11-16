@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [main, dev, dev-nextjs-mdx]
+  pull_request:
+    branches: [main, dev, dev-nextjs-mdx]
+
+jobs:
+  sheep:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        # https://github.com/actions/setup-node/blob/main/docs/advanced-usage.md#yarn
+        run: yarn install --immutable
+
+      - name: Type check
+        run: yarn type-check
