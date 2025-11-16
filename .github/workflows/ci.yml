@@ -7,7 +7,7 @@ on:
     branches: [main, dev, dev-nextjs-mdx]
 
 jobs:
-  sheep:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,3 +26,20 @@ jobs:
 
       - name: Build
         run: yarn build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./build
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
